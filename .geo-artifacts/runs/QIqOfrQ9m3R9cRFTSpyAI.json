@@ -1,0 +1,413 @@
+{
+  "id": "QIqOfrQ9m3R9cRFTSpyAI",
+  "url": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+  "geoScore": 53,
+  "pillars": [
+    {
+      "name": "Answer Readiness",
+      "score": 6,
+      "max": 25
+    },
+    {
+      "name": "Schema & Structured Data",
+      "score": 6,
+      "max": 20
+    },
+    {
+      "name": "Rendering & Indexability",
+      "score": 20,
+      "max": 20
+    },
+    {
+      "name": "Evidence Packaging",
+      "score": 15,
+      "max": 15
+    },
+    {
+      "name": "Entity Clarity",
+      "score": 2,
+      "max": 10
+    },
+    {
+      "name": "Freshness",
+      "score": 4,
+      "max": 10
+    }
+  ],
+  "findings": [
+    {
+      "id": "tldr_missing",
+      "severity": "medium",
+      "fixTitle": "Add TL;DR summary near the hero",
+      "impact": "medium",
+      "effort": "low",
+      "where": "Immediately after the hero paragraph.",
+      "why": "No TL;DR or key takeaway statements were found within the first screenful.",
+      "snippetHtml": "<section class=\"rounded-lg border border-amber-200 bg-amber-50 p-4\">\n  <p class=\"text-sm font-semibold tracking-wide text-amber-900\">TL;DR</p>\n  <p class=\"text-base text-amber-900/90\">\n    {Replace with a 2-sentence summary that states the claim and the measurable outcome customers care about.}\n  </p>\n</section>"
+    },
+    {
+      "id": "claim_evidence_gap",
+      "severity": "high",
+      "fixTitle": "Pair each claim with inline evidence",
+      "impact": "high",
+      "effort": "medium",
+      "where": "Within the first two body sections.",
+      "why": "Paragraphs mention benefits without citing primary sources or data.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Teams that ship weekly GEO audits improve answer surfaces within 2 sprints.\n  <strong>Evidence:</strong> According to <a href=\"https://example.com/report-2025\" target=\"_blank\" rel=\"noopener\">Forrester, 2025</a>,\n  programs with structured audits saw a 31% lift in AI-ready snippets.\n</p>"
+    },
+    {
+      "id": "claim_no_citation",
+      "severity": "high",
+      "fixTitle": "Add citations next to bold claims",
+      "impact": "high",
+      "effort": "medium",
+      "where": "Wherever metrics or rankings are listed.",
+      "why": "Claims are not followed by outbound, primary-source links.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Intro to How Structured Data Markup Works | Google Search Central | Documentation | Google for Developers reduces hallucinated answers by 48%.\n  <strong>Evidence:</strong> According to <a href=\"https://data.developers.google.com/geo-study.csv\" target=\"_blank\" rel=\"noopener\">Internal Study, 2025</a>\n  across 120 intents.\n</p>"
+    },
+    {
+      "id": "jsonld_missing",
+      "severity": "high",
+      "fixTitle": "Add Article schema describing the page",
+      "impact": "high",
+      "effort": "low",
+      "where": "<head>",
+      "why": "No JSON-LD blocks were detected.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Intro to How Structured Data Markup Works | Google Search Central | Documentation | Google for Developers\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"developers.google.com\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"mainEntityOfPage\": \"https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"developers.google.com\"\n  }\n}"
+    },
+    {
+      "id": "schema_properties_sparse",
+      "severity": "medium",
+      "fixTitle": "Expand schema with author, dates, publisher, and mainEntity",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "Schema is missing author/publisher/date properties required for rich results.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Intro to How Structured Data Markup Works | Google Search Central | Documentation | Google for Developers\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Please add editor name\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"developers.google.com\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://developers.google.com/logo.png\"\n    }\n  },\n  \"mainEntityOfPage\": \"https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data\"\n}"
+    },
+    {
+      "id": "entity_schema_missing",
+      "severity": "medium",
+      "fixTitle": "Declare Organization and Person entities",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "Schema lacks Organization/WebSite + Person/Product definitions.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"developers.google.com\",\n  \"url\": \"https://developers.google.com\",\n  \"logo\": \"https://developers.google.com/logo.png\",\n  \"sameAs\": [\n    \"https://www.linkedin.com/company/developers.google.com\",\n    \"https://twitter.com/developers.google.com\"\n  ]\n}"
+    },
+    {
+      "id": "name_inconsistent",
+      "severity": "low",
+      "fixTitle": "Align H1, title, and schema names",
+      "impact": "low",
+      "effort": "low",
+      "where": "Hero heading and metadata.",
+      "why": "The H1 text does not match the <title> and schema headline.",
+      "snippetHtml": "<h1>Intro to How Structured Data Markup Works | Google Search Central | Documentation | Google for Developers</h1>\n<meta name=\"og:title\" content=\"Intro to How Structured Data Markup Works | Google Search Central | Documentation | Google for Developers\" />"
+    },
+    {
+      "id": "sameas_missing",
+      "severity": "low",
+      "fixTitle": "Add sameAs references",
+      "impact": "low",
+      "effort": "low",
+      "where": "Organization JSON-LD block.",
+      "why": "Organization schema is missing sameAs links to public profiles.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"developers.google.com\",\n  \"url\": \"https://developers.google.com\",\n  \"sameAs\": [\n    \"https://en.wikipedia.org/wiki/developers.google.com\",\n    \"https://www.crunchbase.com/organization/developers.google.com\"\n  ]\n}"
+    },
+    {
+      "id": "updated_on_missing",
+      "severity": "medium",
+      "fixTitle": "Display Updated on near the title",
+      "impact": "medium",
+      "effort": "low",
+      "where": "Immediately below the H1.",
+      "why": "No visible updated timestamp was found near the hero.",
+      "snippetHtml": "<p class=\"text-sm text-muted-foreground\">\n  <time datetime=\"2025-11-08\">Updated on November 7, 2025</time>\n</p>"
+    },
+    {
+      "id": "changelog_missing",
+      "severity": "low",
+      "fixTitle": "Link to release notes or changelog",
+      "impact": "low",
+      "effort": "medium",
+      "where": "Footer or FAQ section.",
+      "why": "No changelog links or version history references were detected.",
+      "snippetHtml": "<a href=\"/changelog\" class=\"text-sm underline\">See product changelog</a>"
+    }
+  ],
+  "topFixes": [
+    {
+      "id": "tldr_missing",
+      "impact": "medium",
+      "effort": "low",
+      "why": "No TL;DR or key takeaway statements were found within the first screenful.",
+      "where": "Immediately after the hero paragraph.",
+      "snippetHtml": "<section class=\"rounded-lg border border-amber-200 bg-amber-50 p-4\">\n  <p class=\"text-sm font-semibold tracking-wide text-amber-900\">TL;DR</p>\n  <p class=\"text-base text-amber-900/90\">\n    {Replace with a 2-sentence summary that states the claim and the measurable outcome customers care about.}\n  </p>\n</section>"
+    },
+    {
+      "id": "claim_evidence_gap",
+      "impact": "high",
+      "effort": "medium",
+      "why": "Paragraphs mention benefits without citing primary sources or data.",
+      "where": "Within the first two body sections.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Teams that ship weekly GEO audits improve answer surfaces within 2 sprints.\n  <strong>Evidence:</strong> According to <a href=\"https://example.com/report-2025\" target=\"_blank\" rel=\"noopener\">Forrester, 2025</a>,\n  programs with structured audits saw a 31% lift in AI-ready snippets.\n</p>"
+    },
+    {
+      "id": "claim_no_citation",
+      "impact": "high",
+      "effort": "medium",
+      "why": "Claims are not followed by outbound, primary-source links.",
+      "where": "Wherever metrics or rankings are listed.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Intro to How Structured Data Markup Works | Google Search Central | Documentation | Google for Developers reduces hallucinated answers by 48%.\n  <strong>Evidence:</strong> According to <a href=\"https://data.developers.google.com/geo-study.csv\" target=\"_blank\" rel=\"noopener\">Internal Study, 2025</a>\n  across 120 intents.\n</p>"
+    },
+    {
+      "id": "jsonld_missing",
+      "impact": "high",
+      "effort": "low",
+      "why": "No JSON-LD blocks were detected.",
+      "where": "<head>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Intro to How Structured Data Markup Works | Google Search Central | Documentation | Google for Developers\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"developers.google.com\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"mainEntityOfPage\": \"https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"developers.google.com\"\n  }\n}"
+    },
+    {
+      "id": "schema_properties_sparse",
+      "impact": "medium",
+      "effort": "low",
+      "why": "Schema is missing author/publisher/date properties required for rich results.",
+      "where": "<head>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Intro to How Structured Data Markup Works | Google Search Central | Documentation | Google for Developers\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Please add editor name\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"developers.google.com\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://developers.google.com/logo.png\"\n    }\n  },\n  \"mainEntityOfPage\": \"https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data\"\n}"
+    }
+  ],
+  "evidence": {
+    "textRatioNoJS": 1,
+    "noJSHeadings": [
+      "Introduction to structured data markup in Google Search",
+      "Why add structured data to a page?",
+      "How structured data works in Google Search",
+      "Structured data vocabulary and format",
+      "Supported formats",
+      "Structured data guidelines",
+      "Get started with structured data",
+      "Measuring the effect of structured data",
+      "Get support",
+      "Resources",
+      "Tools"
+    ],
+    "jsHeadings": [
+      "Introduction to structured data markup in Google Search",
+      "Why add structured data to a page?",
+      "How structured data works in Google Search",
+      "Structured data vocabulary and format",
+      "Supported formats",
+      "Structured data guidelines",
+      "Get started with structured data",
+      "Measuring the effect of structured data",
+      "Get support",
+      "Resources",
+      "Tools"
+    ],
+    "missingHeadings": [],
+    "jsonLdTypes": [
+      "BreadcrumbList"
+    ],
+    "consoleErrors": [],
+    "screenshotDiffs": {},
+    "canonical": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+    "sitemap": "https://developers.google.com/sitemap.xml",
+    "robots": "https://developers.google.com/robots.txt",
+    "sitemapLastmod": "2025-11-08T00:19:30+00:00"
+  },
+  "scoreTrace": [
+    {
+      "id": "answer_faq_visible",
+      "pillar": "Answer Readiness",
+      "title": "FAQ/Q&A sections visible",
+      "max": 6,
+      "score": 6,
+      "passed": true,
+      "evidence": "2 FAQ headings found."
+    },
+    {
+      "id": "answer_tldr",
+      "pillar": "Answer Readiness",
+      "title": "TL;DR or key takeaway near top",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "tldr_missing"
+    },
+    {
+      "id": "answer_claim_evidence",
+      "pillar": "Answer Readiness",
+      "title": "Claim → evidence blocks",
+      "max": 7,
+      "score": 0,
+      "passed": false,
+      "findingId": "claim_evidence_gap",
+      "evidence": "0 block(s) detected."
+    },
+    {
+      "id": "answer_claim_citation",
+      "pillar": "Answer Readiness",
+      "title": "Claim + citation proximity",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "claim_no_citation",
+      "evidence": "0 paragraphs with citations."
+    },
+    {
+      "id": "schema_jsonld",
+      "pillar": "Schema & Structured Data",
+      "title": "JSON-LD present",
+      "max": 6,
+      "score": 6,
+      "passed": true,
+      "evidence": "1 script(s)"
+    },
+    {
+      "id": "schema_supported_types",
+      "pillar": "Schema & Structured Data",
+      "title": "Supported schema types (Article/FAQ/HowTo/Dataset)",
+      "max": 8,
+      "score": 0,
+      "passed": false,
+      "findingId": "jsonld_missing",
+      "evidence": "0 supported block(s)."
+    },
+    {
+      "id": "schema_rich_properties",
+      "pillar": "Schema & Structured Data",
+      "title": "Non-trivial properties (author/dates/publisher/mainEntity)",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "schema_properties_sparse"
+    },
+    {
+      "id": "render_text_ratio",
+      "pillar": "Rendering & Indexability",
+      "title": "≥60% of text in no-JS HTML",
+      "max": 8,
+      "score": 8,
+      "passed": true,
+      "evidence": "text_ratio_noJS=1"
+    },
+    {
+      "id": "render_canonical",
+      "pillar": "Rendering & Indexability",
+      "title": "Canonical matches live URL",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+    },
+    {
+      "id": "render_sitemap",
+      "pillar": "Rendering & Indexability",
+      "title": "Sitemap discoverable",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "https://developers.google.com/sitemap.xml"
+    },
+    {
+      "id": "render_robots",
+      "pillar": "Rendering & Indexability",
+      "title": "Robots.txt + meta robots allow indexing",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "Robots allow"
+    },
+    {
+      "id": "evidence_inline_dates",
+      "pillar": "Evidence Packaging",
+      "title": "Inline “Updated on” or factual dates",
+      "max": 3,
+      "score": 3,
+      "passed": true
+    },
+    {
+      "id": "evidence_outbound",
+      "pillar": "Evidence Packaging",
+      "title": "Primary-source outbound links",
+      "max": 5,
+      "score": 5,
+      "passed": true,
+      "evidence": "3 external link(s)."
+    },
+    {
+      "id": "evidence_alt_text",
+      "pillar": "Evidence Packaging",
+      "title": "Descriptive alt text",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "alt coverage 100%"
+    },
+    {
+      "id": "evidence_data_table",
+      "pillar": "Evidence Packaging",
+      "title": "Tables or downloadable datasets",
+      "max": 3,
+      "score": 3,
+      "passed": true
+    },
+    {
+      "id": "entity_schema_pairs",
+      "pillar": "Entity Clarity",
+      "title": "Organization + Person/Product schema",
+      "max": 4,
+      "score": 1,
+      "passed": false,
+      "findingId": "entity_schema_missing"
+    },
+    {
+      "id": "entity_name_consistency",
+      "pillar": "Entity Clarity",
+      "title": "Consistent H1/title naming",
+      "max": 3,
+      "score": 1,
+      "passed": false,
+      "findingId": "name_inconsistent"
+    },
+    {
+      "id": "entity_sameas",
+      "pillar": "Entity Clarity",
+      "title": "`sameAs` authority links",
+      "max": 3,
+      "score": 0,
+      "passed": false,
+      "findingId": "sameas_missing",
+      "evidence": "0 sameAs link(s)."
+    },
+    {
+      "id": "freshness_updated_on",
+      "pillar": "Freshness",
+      "title": "Visible “Updated on” near title",
+      "max": 4,
+      "score": 0,
+      "passed": false,
+      "findingId": "updated_on_missing"
+    },
+    {
+      "id": "freshness_sitemap_lastmod",
+      "pillar": "Freshness",
+      "title": "Sitemap <lastmod> freshness",
+      "max": 4,
+      "score": 4,
+      "passed": true
+    },
+    {
+      "id": "freshness_changelog",
+      "pillar": "Freshness",
+      "title": "Changelog/version link",
+      "max": 2,
+      "score": 0,
+      "passed": false,
+      "findingId": "changelog_missing"
+    }
+  ],
+  "generatedArtifacts": {}
+}

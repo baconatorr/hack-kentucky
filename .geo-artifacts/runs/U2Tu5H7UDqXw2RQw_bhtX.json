@@ -1,0 +1,395 @@
+{
+  "id": "U2Tu5H7UDqXw2RQw_bhtX",
+  "url": "https://hackkentucky.com",
+  "geoScore": 35.55555555555556,
+  "pillars": [
+    {
+      "name": "Answer Readiness",
+      "score": 6,
+      "max": 25
+    },
+    {
+      "name": "Schema & Structured Data",
+      "score": 0,
+      "max": 20
+    },
+    {
+      "name": "Rendering & Indexability",
+      "score": 12,
+      "max": 20
+    },
+    {
+      "name": "Evidence Packaging",
+      "score": 12,
+      "max": 15
+    },
+    {
+      "name": "Entity Clarity",
+      "score": 2,
+      "max": 10
+    }
+  ],
+  "findings": [
+    {
+      "id": "faq_missing",
+      "severity": "high",
+      "fixTitle": "Add visible FAQ with matching JSON-LD",
+      "impact": "high",
+      "effort": "low",
+      "where": "After the section that introduces the product's workflow.",
+      "why": "No FAQ/Q&A headings detected, so the page cannot answer common queries directly.",
+      "snippetHtml": "<section aria-labelledby=\"faq-title\" class=\"space-y-4\">\n  <h2 id=\"faq-title\" class=\"text-2xl font-semibold\">Frequently Asked Questions</h2>\n  \n  <p class=\"text-sm text-muted-foreground\">Generated from https://hackkentucky.com on November 7, 2025.</p>\n</section>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [],\n  \"mainEntityOfPage\": \"https://hackkentucky.com\"\n}"
+    },
+    {
+      "id": "claim_evidence_gap",
+      "severity": "high",
+      "fixTitle": "Pair each claim with inline evidence",
+      "impact": "high",
+      "effort": "medium",
+      "where": "Within the first two body sections.",
+      "why": "Paragraphs mention benefits without citing primary sources or data.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Teams that ship weekly GEO audits improve answer surfaces within 2 sprints.\n  <strong>Evidence:</strong> According to <a href=\"https://example.com/report-2025\" target=\"_blank\" rel=\"noopener\">Forrester, 2025</a>,\n  programs with structured audits saw a 31% lift in AI-ready snippets.\n</p>"
+    },
+    {
+      "id": "claim_no_citation",
+      "severity": "high",
+      "fixTitle": "Add citations next to bold claims",
+      "impact": "high",
+      "effort": "medium",
+      "where": "Wherever metrics or rankings are listed.",
+      "why": "Claims are not followed by outbound, primary-source links.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Hack Kentucky 2025 reduces hallucinated answers by 48%.\n  <strong>Evidence:</strong> According to <a href=\"https://data.hackkentucky.com/geo-study.csv\" target=\"_blank\" rel=\"noopener\">Internal Study, 2025</a>\n  across 120 intents.\n</p>"
+    },
+    {
+      "id": "jsonld_missing",
+      "severity": "high",
+      "fixTitle": "Add Article schema describing the page",
+      "impact": "high",
+      "effort": "low",
+      "where": "<head>",
+      "why": "No JSON-LD blocks were detected.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Hack Kentucky 2025\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"hackkentucky.com\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"mainEntityOfPage\": \"https://hackkentucky.com\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"hackkentucky.com\"\n  }\n}"
+    },
+    {
+      "id": "schema_properties_sparse",
+      "severity": "medium",
+      "fixTitle": "Expand schema with author, dates, publisher, and mainEntity",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "Schema is missing author/publisher/date properties required for rich results.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Hack Kentucky 2025\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Please add editor name\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"hackkentucky.com\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://hackkentucky.com/logo.png\"\n    }\n  },\n  \"mainEntityOfPage\": \"https://hackkentucky.com\"\n}"
+    },
+    {
+      "id": "canonical_conflict",
+      "severity": "medium",
+      "fixTitle": "Set a canonical that matches the live URL",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "The canonical link points to a different host or is missing.",
+      "snippetHtml": "<link rel=\"canonical\" href=\"https://hackkentucky.com\" />"
+    },
+    {
+      "id": "sitemap_missing",
+      "severity": "medium",
+      "fixTitle": "Expose sitemap in robots.txt",
+      "impact": "medium",
+      "effort": "low",
+      "where": "https://hackkentucky.com/robots.txt",
+      "why": "No sitemap file was discovered via robots.txt or default locations.",
+      "snippetHtml": "User-agent: *\nAllow: /\nSitemap: https://hackkentucky.com/sitemap.xml"
+    },
+    {
+      "id": "table_missing",
+      "severity": "medium",
+      "fixTitle": "Publish structured table with downloadable CSV",
+      "impact": "medium",
+      "effort": "medium",
+      "where": "After the methodology section.",
+      "why": "No tables or data downloads detected despite metrics being referenced.",
+      "snippetHtml": "<table class=\"w-full text-sm\">\n  <caption>Weekly GEO score impact</caption>\n  <thead>\n    <tr><th>Week</th><th>Score</th><th>Primary Fix</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>1</td><td>42</td><td>Added TL;DR</td></tr>\n    <tr><td>4</td><td>78</td><td>Shipped FAQ schema</td></tr>\n  </tbody>\n</table>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Dataset\",\n  \"name\": \"Weekly GEO score impact\",\n  \"description\": \"Key figures from Hack Kentucky 2025.\",\n  \"distribution\": [\n    {\n      \"@type\": \"DataDownload\",\n      \"encodingFormat\": \"text/csv\",\n      \"contentUrl\": \"https://hackkentucky.com/downloads/geo-score.csv\"\n    }\n  ]\n}"
+    },
+    {
+      "id": "entity_schema_missing",
+      "severity": "medium",
+      "fixTitle": "Declare Organization and Person entities",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "Schema lacks Organization/WebSite + Person/Product definitions.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"hackkentucky.com\",\n  \"url\": \"https://hackkentucky.com\",\n  \"logo\": \"https://hackkentucky.com/logo.png\",\n  \"sameAs\": [\n    \"https://www.linkedin.com/company/hackkentucky.com\",\n    \"https://twitter.com/hackkentucky.com\"\n  ]\n}"
+    },
+    {
+      "id": "name_inconsistent",
+      "severity": "low",
+      "fixTitle": "Align H1, title, and schema names",
+      "impact": "low",
+      "effort": "low",
+      "where": "Hero heading and metadata.",
+      "why": "The H1 text does not match the <title> and schema headline.",
+      "snippetHtml": "<h1>Hack Kentucky 2025</h1>\n<meta name=\"og:title\" content=\"Hack Kentucky 2025\" />"
+    },
+    {
+      "id": "sameas_missing",
+      "severity": "low",
+      "fixTitle": "Add sameAs references",
+      "impact": "low",
+      "effort": "low",
+      "where": "Organization JSON-LD block.",
+      "why": "Organization schema is missing sameAs links to public profiles.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"hackkentucky.com\",\n  \"url\": \"https://hackkentucky.com\",\n  \"sameAs\": [\n    \"https://en.wikipedia.org/wiki/hackkentucky.com\",\n    \"https://www.crunchbase.com/organization/hackkentucky.com\"\n  ]\n}"
+    }
+  ],
+  "topFixes": [
+    {
+      "id": "faq_missing",
+      "impact": "high",
+      "effort": "low",
+      "why": "No FAQ/Q&A headings detected, so the page cannot answer common queries directly.",
+      "where": "After the section that introduces the product's workflow.",
+      "snippetHtml": "<section aria-labelledby=\"faq-title\" class=\"space-y-4\">\n  <h2 id=\"faq-title\" class=\"text-2xl font-semibold\">Frequently Asked Questions</h2>\n  \n  <p class=\"text-sm text-muted-foreground\">Generated from https://hackkentucky.com on November 7, 2025.</p>\n</section>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [],\n  \"mainEntityOfPage\": \"https://hackkentucky.com\"\n}"
+    },
+    {
+      "id": "claim_evidence_gap",
+      "impact": "high",
+      "effort": "medium",
+      "why": "Paragraphs mention benefits without citing primary sources or data.",
+      "where": "Within the first two body sections.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Teams that ship weekly GEO audits improve answer surfaces within 2 sprints.\n  <strong>Evidence:</strong> According to <a href=\"https://example.com/report-2025\" target=\"_blank\" rel=\"noopener\">Forrester, 2025</a>,\n  programs with structured audits saw a 31% lift in AI-ready snippets.\n</p>"
+    },
+    {
+      "id": "claim_no_citation",
+      "impact": "high",
+      "effort": "medium",
+      "why": "Claims are not followed by outbound, primary-source links.",
+      "where": "Wherever metrics or rankings are listed.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Hack Kentucky 2025 reduces hallucinated answers by 48%.\n  <strong>Evidence:</strong> According to <a href=\"https://data.hackkentucky.com/geo-study.csv\" target=\"_blank\" rel=\"noopener\">Internal Study, 2025</a>\n  across 120 intents.\n</p>"
+    },
+    {
+      "id": "jsonld_missing",
+      "impact": "high",
+      "effort": "low",
+      "why": "No JSON-LD blocks were detected.",
+      "where": "<head>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Hack Kentucky 2025\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"hackkentucky.com\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"mainEntityOfPage\": \"https://hackkentucky.com\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"hackkentucky.com\"\n  }\n}"
+    },
+    {
+      "id": "schema_properties_sparse",
+      "impact": "medium",
+      "effort": "low",
+      "why": "Schema is missing author/publisher/date properties required for rich results.",
+      "where": "<head>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Hack Kentucky 2025\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Please add editor name\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"hackkentucky.com\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://hackkentucky.com/logo.png\"\n    }\n  },\n  \"mainEntityOfPage\": \"https://hackkentucky.com\"\n}"
+    }
+  ],
+  "evidence": {
+    "textRatioNoJS": 1,
+    "noJSHeadings": [
+      "HackKentucky",
+      "Fall 2025",
+      "Rules",
+      "November 7-8, 2025",
+      "Friday, November 7",
+      "Saturday, November 8",
+      "Fueling the build floor",
+      "Title Sponsors",
+      "High Velocity Sponsors",
+      "KYCombinator Sponsors",
+      "Community Sponsors",
+      "Secure your spot on the HackKentucky floor"
+    ],
+    "jsHeadings": [
+      "HackKentucky",
+      "Fall 2025",
+      "Rules",
+      "November 7-8, 2025",
+      "Friday, November 7",
+      "Saturday, November 8",
+      "Fueling the build floor",
+      "Title Sponsors",
+      "High Velocity Sponsors",
+      "KYCombinator Sponsors",
+      "Community Sponsors",
+      "Secure your spot on the HackKentucky floor"
+    ],
+    "missingHeadings": [],
+    "jsonLdTypes": [],
+    "consoleErrors": [],
+    "screenshotDiffs": {},
+    "robots": "https://hackkentucky.com/robots.txt"
+  },
+  "scoreTrace": [
+    {
+      "id": "answer_faq_visible",
+      "pillar": "Answer Readiness",
+      "title": "FAQ/Q&A sections visible",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "faq_missing",
+      "evidence": "No FAQ headings detected."
+    },
+    {
+      "id": "answer_tldr",
+      "pillar": "Answer Readiness",
+      "title": "TL;DR or key takeaway near top",
+      "max": 6,
+      "score": 6,
+      "passed": true
+    },
+    {
+      "id": "answer_claim_evidence",
+      "pillar": "Answer Readiness",
+      "title": "Claim → evidence blocks",
+      "max": 7,
+      "score": 0,
+      "passed": false,
+      "findingId": "claim_evidence_gap",
+      "evidence": "0 block(s) detected."
+    },
+    {
+      "id": "answer_claim_citation",
+      "pillar": "Answer Readiness",
+      "title": "Claim + citation proximity",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "claim_no_citation",
+      "evidence": "0 paragraphs with citations."
+    },
+    {
+      "id": "schema_jsonld",
+      "pillar": "Schema & Structured Data",
+      "title": "JSON-LD present",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "jsonld_missing",
+      "evidence": "No JSON-LD detected."
+    },
+    {
+      "id": "schema_supported_types",
+      "pillar": "Schema & Structured Data",
+      "title": "Supported schema types (Article/FAQ/HowTo/Dataset)",
+      "max": 8,
+      "score": 0,
+      "passed": false,
+      "findingId": "jsonld_missing",
+      "evidence": "0 supported block(s)."
+    },
+    {
+      "id": "schema_rich_properties",
+      "pillar": "Schema & Structured Data",
+      "title": "Non-trivial properties (author/dates/publisher/mainEntity)",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "schema_properties_sparse"
+    },
+    {
+      "id": "render_text_ratio",
+      "pillar": "Rendering & Indexability",
+      "title": "≥60% of text in no-JS HTML",
+      "max": 8,
+      "score": 8,
+      "passed": true,
+      "evidence": "text_ratio_noJS=1"
+    },
+    {
+      "id": "render_canonical",
+      "pillar": "Rendering & Indexability",
+      "title": "Canonical matches live URL",
+      "max": 4,
+      "score": 0,
+      "passed": false,
+      "findingId": "canonical_conflict",
+      "evidence": "Not set"
+    },
+    {
+      "id": "render_sitemap",
+      "pillar": "Rendering & Indexability",
+      "title": "Sitemap discoverable",
+      "max": 4,
+      "score": 0,
+      "passed": false,
+      "findingId": "sitemap_missing"
+    },
+    {
+      "id": "render_robots",
+      "pillar": "Rendering & Indexability",
+      "title": "Robots.txt + meta robots allow indexing",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "Robots allow"
+    },
+    {
+      "id": "evidence_inline_dates",
+      "pillar": "Evidence Packaging",
+      "title": "Inline “Updated on” or factual dates",
+      "max": 3,
+      "score": 3,
+      "passed": true
+    },
+    {
+      "id": "evidence_outbound",
+      "pillar": "Evidence Packaging",
+      "title": "Primary-source outbound links",
+      "max": 5,
+      "score": 5,
+      "passed": true,
+      "evidence": "6 external link(s), 0 citation reference(s)."
+    },
+    {
+      "id": "evidence_alt_text",
+      "pillar": "Evidence Packaging",
+      "title": "Descriptive alt text",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "alt coverage 100%"
+    },
+    {
+      "id": "evidence_data_table",
+      "pillar": "Evidence Packaging",
+      "title": "Tables or downloadable datasets",
+      "max": 3,
+      "score": 0,
+      "passed": false,
+      "findingId": "table_missing"
+    },
+    {
+      "id": "entity_schema_pairs",
+      "pillar": "Entity Clarity",
+      "title": "Organization + Person/Product schema",
+      "max": 4,
+      "score": 1,
+      "passed": false,
+      "findingId": "entity_schema_missing"
+    },
+    {
+      "id": "entity_name_consistency",
+      "pillar": "Entity Clarity",
+      "title": "Consistent H1/title naming",
+      "max": 3,
+      "score": 1,
+      "passed": false,
+      "findingId": "name_inconsistent"
+    },
+    {
+      "id": "entity_sameas",
+      "pillar": "Entity Clarity",
+      "title": "`sameAs` authority links",
+      "max": 3,
+      "score": 0,
+      "passed": false,
+      "findingId": "sameas_missing",
+      "evidence": "0 sameAs link(s)."
+    }
+  ],
+  "generatedArtifacts": {}
+}

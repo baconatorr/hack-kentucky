@@ -1,0 +1,6 @@
+{
+  "description": "Robots disallow scenario.",
+  "requestUrl": "https://example.com/private",
+  "status": "cannot_audit",
+  "error": "Robots.txt disallows auditing this path."
+}

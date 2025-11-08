@@ -1,0 +1,254 @@
+{
+  "id": "mQpTbMpAAQOC_zECn1pAp",
+  "url": "https://satmaxxing.com",
+  "geoScore": 34,
+  "pillars": [
+    {
+      "name": "Answer Readiness",
+      "score": 0,
+      "max": 25
+    },
+    {
+      "name": "Schema & Structured Data",
+      "score": 6,
+      "max": 20
+    },
+    {
+      "name": "Rendering & Indexability",
+      "score": 18,
+      "max": 20
+    },
+    {
+      "name": "Evidence Packaging",
+      "score": 4,
+      "max": 15
+    },
+    {
+      "name": "Entity Clarity",
+      "score": 2,
+      "max": 10
+    },
+    {
+      "name": "Freshness",
+      "score": 4,
+      "max": 10
+    }
+  ],
+  "findings": [
+    {
+      "id": "faq_missing",
+      "severity": "high",
+      "fixTitle": "Add visible FAQ with matching JSON-LD",
+      "impact": "high",
+      "effort": "low",
+      "where": "After the section that introduces the product's workflow.",
+      "why": "No FAQ/Q&A headings detected, so the page cannot answer common queries directly.",
+      "snippetHtml": "<section aria-labelledby=\"faq-title\" class=\"space-y-4\">\n  <h2 id=\"faq-title\" class=\"text-2xl font-semibold\">Frequently Asked Questions</h2>\n  \n  <p class=\"text-sm text-muted-foreground\">Generated from https://satmaxxing.com on November 7, 2025.</p>\n</section>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [],\n  \"mainEntityOfPage\": \"https://satmaxxing.com\"\n}"
+    },
+    {
+      "id": "tldr_missing",
+      "severity": "medium",
+      "fixTitle": "Add TL;DR summary near the hero",
+      "impact": "medium",
+      "effort": "low",
+      "where": "Immediately after the hero paragraph.",
+      "why": "No TL;DR or key takeaway statements were found within the first screenful.",
+      "snippetHtml": "<section class=\"rounded-lg border border-amber-200 bg-amber-50 p-4\">\n  <p class=\"text-sm font-semibold tracking-wide text-amber-900\">TL;DR</p>\n  <p class=\"text-base text-amber-900/90\">\n    {Replace with a 2-sentence summary that states the claim and the measurable outcome customers care about.}\n  </p>\n</section>"
+    },
+    {
+      "id": "claim_evidence_gap",
+      "severity": "high",
+      "fixTitle": "Pair each claim with inline evidence",
+      "impact": "high",
+      "effort": "medium",
+      "where": "Within the first two body sections.",
+      "why": "Paragraphs mention benefits without citing primary sources or data.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Teams that ship weekly GEO audits improve answer surfaces within 2 sprints.\n  <strong>Evidence:</strong> According to <a href=\"https://example.com/report-2025\" target=\"_blank\" rel=\"noopener\">Forrester, 2025</a>,\n  programs with structured audits saw a 31% lift in AI-ready snippets.\n</p>"
+    },
+    {
+      "id": "claim_no_citation",
+      "severity": "high",
+      "fixTitle": "Add citations next to bold claims",
+      "impact": "high",
+      "effort": "medium",
+      "where": "Wherever metrics or rankings are listed.",
+      "why": "Claims are not followed by outbound, primary-source links.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> SAT Maxxing - Gamified SAT Prep | Duel Friends & Master Challenges reduces hallucinated answers by 48%.\n  <strong>Evidence:</strong> According to <a href=\"https://data.satmaxxing.com/geo-study.csv\" target=\"_blank\" rel=\"noopener\">Internal Study, 2025</a>\n  across 120 intents.\n</p>"
+    },
+    {
+      "id": "jsonld_missing",
+      "severity": "high",
+      "fixTitle": "Add Article schema describing the page",
+      "impact": "high",
+      "effort": "low",
+      "where": "<head>",
+      "why": "No JSON-LD blocks were detected.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"SAT Maxxing - Gamified SAT Prep | Duel Friends & Master Challenges\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"satmaxxing.com\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"mainEntityOfPage\": \"https://satmaxxing.com\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"satmaxxing.com\"\n  }\n}"
+    },
+    {
+      "id": "schema_properties_sparse",
+      "severity": "medium",
+      "fixTitle": "Expand schema with author, dates, publisher, and mainEntity",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "Schema is missing author/publisher/date properties required for rich results.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"SAT Maxxing - Gamified SAT Prep | Duel Friends & Master Challenges\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Please add editor name\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"satmaxxing.com\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://satmaxxing.com/logo.png\"\n    }\n  },\n  \"mainEntityOfPage\": \"https://satmaxxing.com\"\n}"
+    },
+    {
+      "id": "canonical_conflict",
+      "severity": "medium",
+      "fixTitle": "Set a canonical that matches the live URL",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "The canonical link points to a different host or is missing.",
+      "snippetHtml": "<link rel=\"canonical\" href=\"https://satmaxxing.com\" />"
+    },
+    {
+      "id": "inline_dates_missing",
+      "severity": "medium",
+      "fixTitle": "Add inline updated-on dates",
+      "impact": "medium",
+      "effort": "low",
+      "where": "Under the heading or within stat blocks.",
+      "why": "No inline dates were found near key claims.",
+      "snippetHtml": "<p>\n  <time datetime=\"2025-11-08\">Updated on November 7, 2025</time> – GEO benchmarks refreshed monthly.\n</p>"
+    },
+    {
+      "id": "outbound_links_missing",
+      "severity": "medium",
+      "fixTitle": "Link to primary research for each stat",
+      "impact": "medium",
+      "effort": "medium",
+      "where": "Where stats or methodologies are presented.",
+      "why": "Fewer than 2 outbound citations were detected.",
+      "snippetHtml": "<p>\n  <strong>Evidence:</strong> Based on <a href=\"https://research.satmaxxing.com/geo-trends-2025.pdf\" target=\"_blank\" rel=\"noopener\">Geo Trends 2025</a>.\n</p>"
+    },
+    {
+      "id": "table_missing",
+      "severity": "medium",
+      "fixTitle": "Publish structured table with downloadable CSV",
+      "impact": "medium",
+      "effort": "medium",
+      "where": "After the methodology section.",
+      "why": "No tables or data downloads detected despite metrics being referenced.",
+      "snippetHtml": "<table class=\"w-full text-sm\">\n  <caption>Weekly GEO score impact</caption>\n  <thead>\n    <tr><th>Week</th><th>Score</th><th>Primary Fix</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>1</td><td>42</td><td>Added TL;DR</td></tr>\n    <tr><td>4</td><td>78</td><td>Shipped FAQ schema</td></tr>\n  </tbody>\n</table>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Dataset\",\n  \"name\": \"Weekly GEO score impact\",\n  \"description\": \"Key figures from SAT Maxxing - Gamified SAT Prep | Duel Friends & Master Challenges.\",\n  \"distribution\": [\n    {\n      \"@type\": \"DataDownload\",\n      \"encodingFormat\": \"text/csv\",\n      \"contentUrl\": \"https://satmaxxing.com/downloads/geo-score.csv\"\n    }\n  ]\n}"
+    },
+    {
+      "id": "entity_schema_missing",
+      "severity": "medium",
+      "fixTitle": "Declare Organization and Person entities",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "Schema lacks Organization/WebSite + Person/Product definitions.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"satmaxxing.com\",\n  \"url\": \"https://satmaxxing.com\",\n  \"logo\": \"https://satmaxxing.com/logo.png\",\n  \"sameAs\": [\n    \"https://www.linkedin.com/company/satmaxxing.com\",\n    \"https://twitter.com/satmaxxing.com\"\n  ]\n}"
+    },
+    {
+      "id": "name_inconsistent",
+      "severity": "low",
+      "fixTitle": "Align H1, title, and schema names",
+      "impact": "low",
+      "effort": "low",
+      "where": "Hero heading and metadata.",
+      "why": "The H1 text does not match the <title> and schema headline.",
+      "snippetHtml": "<h1>SAT Maxxing - Gamified SAT Prep | Duel Friends & Master Challenges</h1>\n<meta name=\"og:title\" content=\"SAT Maxxing - Gamified SAT Prep | Duel Friends & Master Challenges\" />"
+    },
+    {
+      "id": "sameas_missing",
+      "severity": "low",
+      "fixTitle": "Add sameAs references",
+      "impact": "low",
+      "effort": "low",
+      "where": "Organization JSON-LD block.",
+      "why": "Organization schema is missing sameAs links to public profiles.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"satmaxxing.com\",\n  \"url\": \"https://satmaxxing.com\",\n  \"sameAs\": [\n    \"https://en.wikipedia.org/wiki/satmaxxing.com\",\n    \"https://www.crunchbase.com/organization/satmaxxing.com\"\n  ]\n}"
+    },
+    {
+      "id": "updated_on_missing",
+      "severity": "medium",
+      "fixTitle": "Display Updated on near the title",
+      "impact": "medium",
+      "effort": "low",
+      "where": "Immediately below the H1.",
+      "why": "No visible updated timestamp was found near the hero.",
+      "snippetHtml": "<p class=\"text-sm text-muted-foreground\">\n  <time datetime=\"2025-11-08\">Updated on November 7, 2025</time>\n</p>"
+    },
+    {
+      "id": "changelog_missing",
+      "severity": "low",
+      "fixTitle": "Link to release notes or changelog",
+      "impact": "low",
+      "effort": "medium",
+      "where": "Footer or FAQ section.",
+      "why": "No changelog links or version history references were detected.",
+      "snippetHtml": "<a href=\"/changelog\" class=\"text-sm underline\">See product changelog</a>"
+    }
+  ],
+  "topFixes": [
+    {
+      "id": "faq_missing",
+      "impact": "high",
+      "effort": "low",
+      "why": "No FAQ/Q&A headings detected, so the page cannot answer common queries directly.",
+      "where": "After the section that introduces the product's workflow.",
+      "snippetHtml": "<section aria-labelledby=\"faq-title\" class=\"space-y-4\">\n  <h2 id=\"faq-title\" class=\"text-2xl font-semibold\">Frequently Asked Questions</h2>\n  \n  <p class=\"text-sm text-muted-foreground\">Generated from https://satmaxxing.com on November 7, 2025.</p>\n</section>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [],\n  \"mainEntityOfPage\": \"https://satmaxxing.com\"\n}"
+    },
+    {
+      "id": "tldr_missing",
+      "impact": "medium",
+      "effort": "low",
+      "why": "No TL;DR or key takeaway statements were found within the first screenful.",
+      "where": "Immediately after the hero paragraph.",
+      "snippetHtml": "<section class=\"rounded-lg border border-amber-200 bg-amber-50 p-4\">\n  <p class=\"text-sm font-semibold tracking-wide text-amber-900\">TL;DR</p>\n  <p class=\"text-base text-amber-900/90\">\n    {Replace with a 2-sentence summary that states the claim and the measurable outcome customers care about.}\n  </p>\n</section>"
+    },
+    {
+      "id": "claim_evidence_gap",
+      "impact": "high",
+      "effort": "medium",
+      "why": "Paragraphs mention benefits without citing primary sources or data.",
+      "where": "Within the first two body sections.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> Teams that ship weekly GEO audits improve answer surfaces within 2 sprints.\n  <strong>Evidence:</strong> According to <a href=\"https://example.com/report-2025\" target=\"_blank\" rel=\"noopener\">Forrester, 2025</a>,\n  programs with structured audits saw a 31% lift in AI-ready snippets.\n</p>"
+    },
+    {
+      "id": "claim_no_citation",
+      "impact": "high",
+      "effort": "medium",
+      "why": "Claims are not followed by outbound, primary-source links.",
+      "where": "Wherever metrics or rankings are listed.",
+      "snippetHtml": "<p>\n  <strong>Claim:</strong> SAT Maxxing - Gamified SAT Prep | Duel Friends & Master Challenges reduces hallucinated answers by 48%.\n  <strong>Evidence:</strong> According to <a href=\"https://data.satmaxxing.com/geo-study.csv\" target=\"_blank\" rel=\"noopener\">Internal Study, 2025</a>\n  across 120 intents.\n</p>"
+    },
+    {
+      "id": "jsonld_missing",
+      "impact": "high",
+      "effort": "low",
+      "why": "No JSON-LD blocks were detected.",
+      "where": "<head>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"SAT Maxxing - Gamified SAT Prep | Duel Friends & Master Challenges\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"satmaxxing.com\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"mainEntityOfPage\": \"https://satmaxxing.com\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"satmaxxing.com\"\n  }\n}"
+    }
+  ],
+  "evidence": {
+    "textRatioNoJS": 1,
+    "noJSHeadings": [
+      "Loading..."
+    ],
+    "jsHeadings": [
+      "Loading..."
+    ],
+    "missingHeadings": [],
+    "jsonLdTypes": [
+      "WebApplication"
+    ],
+    "consoleErrors": [],
+    "screenshotDiffs": {},
+    "canonical": "https://www.satmaxxing.com",
+    "sitemap": "https://www.satmaxxing.com/sitemap.xml",
+    "robots": "https://satmaxxing.com/robots.txt",
+    "sitemapLastmod": "2025-10-25T02:50:04.997Z"
+  },
+  "generatedArtifacts": {}
+}

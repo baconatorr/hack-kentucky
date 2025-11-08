@@ -1,0 +1,404 @@
+{
+  "id": "BWvrTgG2-hHDRzXiGUVLV",
+  "url": "https://en.wikipedia.org/wiki/Hensley_Henson",
+  "geoScore": 66,
+  "pillars": [
+    {
+      "name": "Answer Readiness",
+      "score": 19,
+      "max": 25
+    },
+    {
+      "name": "Schema & Structured Data",
+      "score": 14,
+      "max": 20
+    },
+    {
+      "name": "Rendering & Indexability",
+      "score": 16,
+      "max": 20
+    },
+    {
+      "name": "Evidence Packaging",
+      "score": 15,
+      "max": 15
+    },
+    {
+      "name": "Entity Clarity",
+      "score": 2,
+      "max": 10
+    },
+    {
+      "name": "Freshness",
+      "score": 0,
+      "max": 10
+    }
+  ],
+  "findings": [
+    {
+      "id": "faq_missing",
+      "severity": "high",
+      "fixTitle": "Add visible FAQ with matching JSON-LD",
+      "impact": "high",
+      "effort": "low",
+      "where": "After the section that introduces the product's workflow.",
+      "why": "No FAQ/Q&A headings detected, so the page cannot answer common queries directly.",
+      "snippetHtml": "<section aria-labelledby=\"faq-title\" class=\"space-y-4\">\n  <h2 id=\"faq-title\" class=\"text-2xl font-semibold\">Frequently Asked Questions</h2>\n  \n  <p class=\"text-sm text-muted-foreground\">Generated from https://en.wikipedia.org/wiki/Hensley_Henson on November 7, 2025.</p>\n</section>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [],\n  \"mainEntityOfPage\": \"https://en.wikipedia.org/wiki/Hensley_Henson\"\n}"
+    },
+    {
+      "id": "schema_properties_sparse",
+      "severity": "medium",
+      "fixTitle": "Expand schema with author, dates, publisher, and mainEntity",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "Schema is missing author/publisher/date properties required for rich results.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Hensley Henson - Wikipedia\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Please add editor name\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"en.wikipedia.org\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://en.wikipedia.org/logo.png\"\n    }\n  },\n  \"mainEntityOfPage\": \"https://en.wikipedia.org/wiki/Hensley_Henson\"\n}"
+    },
+    {
+      "id": "sitemap_missing",
+      "severity": "medium",
+      "fixTitle": "Expose sitemap in robots.txt",
+      "impact": "medium",
+      "effort": "low",
+      "where": "https://en.wikipedia.org/robots.txt",
+      "why": "No sitemap file was discovered via robots.txt or default locations.",
+      "snippetHtml": "User-agent: *\nAllow: /\nSitemap: https://en.wikipedia.org/sitemap.xml"
+    },
+    {
+      "id": "entity_schema_missing",
+      "severity": "medium",
+      "fixTitle": "Declare Organization and Person entities",
+      "impact": "medium",
+      "effort": "low",
+      "where": "<head>",
+      "why": "Schema lacks Organization/WebSite + Person/Product definitions.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"en.wikipedia.org\",\n  \"url\": \"https://en.wikipedia.org\",\n  \"logo\": \"https://en.wikipedia.org/logo.png\",\n  \"sameAs\": [\n    \"https://www.linkedin.com/company/en.wikipedia.org\",\n    \"https://twitter.com/en.wikipedia.org\"\n  ]\n}"
+    },
+    {
+      "id": "name_inconsistent",
+      "severity": "low",
+      "fixTitle": "Align H1, title, and schema names",
+      "impact": "low",
+      "effort": "low",
+      "where": "Hero heading and metadata.",
+      "why": "The H1 text does not match the <title> and schema headline.",
+      "snippetHtml": "<h1>Hensley Henson - Wikipedia</h1>\n<meta name=\"og:title\" content=\"Hensley Henson - Wikipedia\" />"
+    },
+    {
+      "id": "sameas_missing",
+      "severity": "low",
+      "fixTitle": "Add sameAs references",
+      "impact": "low",
+      "effort": "low",
+      "where": "Organization JSON-LD block.",
+      "why": "Organization schema is missing sameAs links to public profiles.",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"en.wikipedia.org\",\n  \"url\": \"https://en.wikipedia.org\",\n  \"sameAs\": [\n    \"https://en.wikipedia.org/wiki/en.wikipedia.org\",\n    \"https://www.crunchbase.com/organization/en.wikipedia.org\"\n  ]\n}"
+    },
+    {
+      "id": "updated_on_missing",
+      "severity": "medium",
+      "fixTitle": "Display Updated on near the title",
+      "impact": "medium",
+      "effort": "low",
+      "where": "Immediately below the H1.",
+      "why": "No visible updated timestamp was found near the hero.",
+      "snippetHtml": "<p class=\"text-sm text-muted-foreground\">\n  <time datetime=\"2025-11-08\">Updated on November 7, 2025</time>\n</p>"
+    },
+    {
+      "id": "changelog_missing",
+      "severity": "low",
+      "fixTitle": "Link to release notes or changelog",
+      "impact": "low",
+      "effort": "medium",
+      "where": "Footer or FAQ section.",
+      "why": "No changelog links or version history references were detected.",
+      "snippetHtml": "<a href=\"/changelog\" class=\"text-sm underline\">See product changelog</a>"
+    }
+  ],
+  "topFixes": [
+    {
+      "id": "faq_missing",
+      "impact": "high",
+      "effort": "low",
+      "why": "No FAQ/Q&A headings detected, so the page cannot answer common queries directly.",
+      "where": "After the section that introduces the product's workflow.",
+      "snippetHtml": "<section aria-labelledby=\"faq-title\" class=\"space-y-4\">\n  <h2 id=\"faq-title\" class=\"text-2xl font-semibold\">Frequently Asked Questions</h2>\n  \n  <p class=\"text-sm text-muted-foreground\">Generated from https://en.wikipedia.org/wiki/Hensley_Henson on November 7, 2025.</p>\n</section>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [],\n  \"mainEntityOfPage\": \"https://en.wikipedia.org/wiki/Hensley_Henson\"\n}"
+    },
+    {
+      "id": "schema_properties_sparse",
+      "impact": "medium",
+      "effort": "low",
+      "why": "Schema is missing author/publisher/date properties required for rich results.",
+      "where": "<head>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Hensley Henson - Wikipedia\",\n  \"author\": {\n    \"@type\": \"Person\",\n    \"name\": \"Please add editor name\"\n  },\n  \"datePublished\": \"2025-11-08\",\n  \"dateModified\": \"2025-11-08\",\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"en.wikipedia.org\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://en.wikipedia.org/logo.png\"\n    }\n  },\n  \"mainEntityOfPage\": \"https://en.wikipedia.org/wiki/Hensley_Henson\"\n}"
+    },
+    {
+      "id": "sitemap_missing",
+      "impact": "medium",
+      "effort": "low",
+      "why": "No sitemap file was discovered via robots.txt or default locations.",
+      "where": "https://en.wikipedia.org/robots.txt",
+      "snippetHtml": "User-agent: *\nAllow: /\nSitemap: https://en.wikipedia.org/sitemap.xml"
+    },
+    {
+      "id": "entity_schema_missing",
+      "impact": "medium",
+      "effort": "low",
+      "why": "Schema lacks Organization/WebSite + Person/Product definitions.",
+      "where": "<head>",
+      "snippetJsonld": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"en.wikipedia.org\",\n  \"url\": \"https://en.wikipedia.org\",\n  \"logo\": \"https://en.wikipedia.org/logo.png\",\n  \"sameAs\": [\n    \"https://www.linkedin.com/company/en.wikipedia.org\",\n    \"https://twitter.com/en.wikipedia.org\"\n  ]\n}"
+    },
+    {
+      "id": "name_inconsistent",
+      "impact": "low",
+      "effort": "low",
+      "why": "The H1 text does not match the <title> and schema headline.",
+      "where": "Hero heading and metadata.",
+      "snippetHtml": "<h1>Hensley Henson - Wikipedia</h1>\n<meta name=\"og:title\" content=\"Hensley Henson - Wikipedia\" />"
+    }
+  ],
+  "evidence": {
+    "textRatioNoJS": 1,
+    "noJSHeadings": [
+      "Contents",
+      "Hensley Henson",
+      "Life and career",
+      "Early years",
+      "All Souls",
+      "Ordination and east London",
+      "Westminster",
+      "Dean and bishop",
+      "Durham",
+      "Last years",
+      "Reputation",
+      "Works by Henson",
+      "As editor",
+      "As author",
+      "Notes, references and sources",
+      "Notes",
+      "References",
+      "Sources"
+    ],
+    "jsHeadings": [
+      "Contents",
+      "Hensley Henson",
+      "Life and career",
+      "Early years",
+      "All Souls",
+      "Ordination and east London",
+      "Westminster",
+      "Dean and bishop",
+      "Durham",
+      "Last years",
+      "Reputation",
+      "Works by Henson",
+      "As editor",
+      "As author",
+      "Notes, references and sources",
+      "Notes",
+      "References",
+      "Sources"
+    ],
+    "missingHeadings": [],
+    "jsonLdTypes": [
+      "Article"
+    ],
+    "consoleErrors": [],
+    "screenshotDiffs": {},
+    "canonical": "https://en.wikipedia.org/wiki/Hensley_Henson",
+    "robots": "https://en.wikipedia.org/robots.txt"
+  },
+  "scoreTrace": [
+    {
+      "id": "answer_faq_visible",
+      "pillar": "Answer Readiness",
+      "title": "FAQ/Q&A sections visible",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "faq_missing",
+      "evidence": "No FAQ headings detected."
+    },
+    {
+      "id": "answer_tldr",
+      "pillar": "Answer Readiness",
+      "title": "TL;DR or key takeaway near top",
+      "max": 6,
+      "score": 6,
+      "passed": true
+    },
+    {
+      "id": "answer_claim_evidence",
+      "pillar": "Answer Readiness",
+      "title": "Claim → evidence blocks",
+      "max": 7,
+      "score": 7,
+      "passed": true,
+      "evidence": "39 block(s) detected."
+    },
+    {
+      "id": "answer_claim_citation",
+      "pillar": "Answer Readiness",
+      "title": "Claim + citation proximity",
+      "max": 6,
+      "score": 6,
+      "passed": true,
+      "evidence": "39 paragraphs with citations."
+    },
+    {
+      "id": "schema_jsonld",
+      "pillar": "Schema & Structured Data",
+      "title": "JSON-LD present",
+      "max": 6,
+      "score": 6,
+      "passed": true,
+      "evidence": "1 script(s)"
+    },
+    {
+      "id": "schema_supported_types",
+      "pillar": "Schema & Structured Data",
+      "title": "Supported schema types (Article/FAQ/HowTo/Dataset)",
+      "max": 8,
+      "score": 8,
+      "passed": true,
+      "evidence": "1 supported block(s)."
+    },
+    {
+      "id": "schema_rich_properties",
+      "pillar": "Schema & Structured Data",
+      "title": "Non-trivial properties (author/dates/publisher/mainEntity)",
+      "max": 6,
+      "score": 0,
+      "passed": false,
+      "findingId": "schema_properties_sparse"
+    },
+    {
+      "id": "render_text_ratio",
+      "pillar": "Rendering & Indexability",
+      "title": "≥60% of text in no-JS HTML",
+      "max": 8,
+      "score": 8,
+      "passed": true,
+      "evidence": "text_ratio_noJS=1"
+    },
+    {
+      "id": "render_canonical",
+      "pillar": "Rendering & Indexability",
+      "title": "Canonical matches live URL",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "https://en.wikipedia.org/wiki/Hensley_Henson"
+    },
+    {
+      "id": "render_sitemap",
+      "pillar": "Rendering & Indexability",
+      "title": "Sitemap discoverable",
+      "max": 4,
+      "score": 0,
+      "passed": false,
+      "findingId": "sitemap_missing"
+    },
+    {
+      "id": "render_robots",
+      "pillar": "Rendering & Indexability",
+      "title": "Robots.txt + meta robots allow indexing",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "Robots allow"
+    },
+    {
+      "id": "evidence_inline_dates",
+      "pillar": "Evidence Packaging",
+      "title": "Inline “Updated on” or factual dates",
+      "max": 3,
+      "score": 3,
+      "passed": true
+    },
+    {
+      "id": "evidence_outbound",
+      "pillar": "Evidence Packaging",
+      "title": "Primary-source outbound links",
+      "max": 5,
+      "score": 5,
+      "passed": true,
+      "evidence": "5 external link(s), 612 citation reference(s)."
+    },
+    {
+      "id": "evidence_alt_text",
+      "pillar": "Evidence Packaging",
+      "title": "Descriptive alt text",
+      "max": 4,
+      "score": 4,
+      "passed": true,
+      "evidence": "alt coverage 90%"
+    },
+    {
+      "id": "evidence_data_table",
+      "pillar": "Evidence Packaging",
+      "title": "Tables or downloadable datasets",
+      "max": 3,
+      "score": 3,
+      "passed": true
+    },
+    {
+      "id": "entity_schema_pairs",
+      "pillar": "Entity Clarity",
+      "title": "Organization + Person/Product schema",
+      "max": 4,
+      "score": 1,
+      "passed": false,
+      "findingId": "entity_schema_missing"
+    },
+    {
+      "id": "entity_name_consistency",
+      "pillar": "Entity Clarity",
+      "title": "Consistent H1/title naming",
+      "max": 3,
+      "score": 1,
+      "passed": false,
+      "findingId": "name_inconsistent"
+    },
+    {
+      "id": "entity_sameas",
+      "pillar": "Entity Clarity",
+      "title": "`sameAs` authority links",
+      "max": 3,
+      "score": 0,
+      "passed": false,
+      "findingId": "sameas_missing",
+      "evidence": "0 sameAs link(s)."
+    },
+    {
+      "id": "freshness_updated_on",
+      "pillar": "Freshness",
+      "title": "Visible “Updated on” near title",
+      "max": 4,
+      "score": 0,
+      "passed": false,
+      "findingId": "updated_on_missing"
+    },
+    {
+      "id": "freshness_sitemap_lastmod",
+      "pillar": "Freshness",
+      "title": "Sitemap <lastmod> freshness",
+      "max": 4,
+      "score": 0,
+      "passed": false
+    },
+    {
+      "id": "freshness_changelog",
+      "pillar": "Freshness",
+      "title": "Changelog/version link",
+      "max": 2,
+      "score": 0,
+      "passed": false,
+      "findingId": "changelog_missing"
+    }
+  ],
+  "generatedArtifacts": {}
+}

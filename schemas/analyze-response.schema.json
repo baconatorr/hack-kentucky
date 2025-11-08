@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GEO Audit Response",
+  "type": "object",
+  "required": ["id", "url", "geoScore", "pillars", "evidence", "findings", "topFixes"],
+  "properties": {
+    "id": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "geoScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "pillars": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "score", "max"],
+        "properties": {
+          "name": { "type": "string" },
+          "score": { "type": "number" },
+          "max": { "type": "number" },
+          "details": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "textRatioNoJS": { "type": "number" },
+        "noJSHeadings": { "type": "array", "items": { "type": "string" } },
+        "jsHeadings": { "type": "array", "items": { "type": "string" } },
+        "missingHeadings": { "type": "array", "items": { "type": "string" } },
+        "jsonLdTypes": { "type": "array", "items": { "type": "string" } },
+        "consoleErrors": { "type": "array", "items": { "type": "string" } },
+        "screenshotDiffs": {
+          "type": "object",
+          "properties": {
+            "base": { "type": "string" },
+            "js": { "type": "string" }
+          }
+        },
+        "canonical": { "type": "string" },
+        "sitemap": { "type": "string" },
+        "robots": { "type": "string" },
+        "updatedOnText": { "type": "string" },
+        "sitemapLastmod": { "type": "string" }
+      },
+      "required": ["noJSHeadings", "jsHeadings", "missingHeadings", "jsonLdTypes", "consoleErrors"]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "severity", "where", "why", "fixTitle", "impact", "effort"],
+        "properties": {
+          "id": { "type": "string" },
+          "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+          "where": { "type": "string" },
+          "why": { "type": "string" },
+          "fixTitle": { "type": "string" },
+          "impact": { "type": "string", "enum": ["low", "medium", "high"] },
+          "effort": { "type": "string", "enum": ["low", "medium", "high"] },
+          "snippetHtml": { "type": "string" },
+          "snippetJsonld": { "type": "string" },
+          "snippetJs": { "type": "string" }
+        }
+      }
+    },
+    "topFixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "impact", "effort", "why", "where"],
+        "properties": {
+          "id": { "type": "string" },
+          "impact": { "type": "string", "enum": ["low", "medium", "high"] },
+          "effort": { "type": "string", "enum": ["low", "medium", "high"] },
+          "why": { "type": "string" },
+          "where": { "type": "string" },
+          "snippetHtml": { "type": "string" },
+          "snippetJsonld": { "type": "string" },
+          "snippetJs": { "type": "string" }
+        }
+      }
+    },
+    "generatedArtifacts": {
+      "type": "object",
+      "properties": {
+        "faqPage": {
+          "type": "object",
+          "required": ["recommendedPath", "html", "jsonld", "provenance"],
+          "properties": {
+            "recommendedPath": { "type": "string" },
+            "html": { "type": "string" },
+            "jsonld": { "type": "string" },
+            "provenance": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

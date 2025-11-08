@@ -1,0 +1,13 @@
+{
+  "description": "Article missing all structured data.",
+  "requestUrl": "https://example.com/articles/geo-basics",
+  "geoScore": 58,
+  "pillars": [
+    { "name": "Answer Readiness", "score": 18, "max": 25 },
+    { "name": "Schema & Structured Data", "score": 2, "max": 20 },
+    { "name": "Rendering & Indexability", "score": 15, "max": 20 },
+    { "name": "Evidence Packaging", "score": 9, "max": 15 },
+    { "name": "Entity Clarity", "score": 6, "max": 10 }
+  ],
+  "topFixes": ["jsonld_missing", "schema_properties_sparse", "faq_missing"]
+}

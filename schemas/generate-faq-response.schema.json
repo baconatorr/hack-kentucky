@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Generate FAQ Response",
+  "type": "object",
+  "required": ["url", "artifact"],
+  "properties": {
+    "url": { "type": "string", "format": "uri" },
+    "artifact": {
+      "type": "object",
+      "required": ["recommendedPath", "html", "jsonld", "provenance"],
+      "properties": {
+        "recommendedPath": { "type": "string" },
+        "html": { "type": "string" },
+        "jsonld": { "type": "string" },
+        "provenance": { "type": "string" }
+      }
+    }
+  }
+}

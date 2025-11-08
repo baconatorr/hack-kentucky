@@ -1,0 +1,44 @@
+{
+  "info": {
+    "name": "GEO Audit",
+    "_postman_id": "a7f1fce1-geo-audit-collection",
+    "description": "Run GEO audit endpoints locally.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST /api/analyze",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"url\": \"https://example.com/blog/geo\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/analyze", "host": ["{{baseUrl}}"], "path": ["api", "analyze"] }
+      }
+    },
+    {
+      "name": "POST /api/generate-faq",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"url\": \"https://example.com/blog/geo\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/generate-faq", "host": ["{{baseUrl}}"], "path": ["api", "generate-faq"] }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}

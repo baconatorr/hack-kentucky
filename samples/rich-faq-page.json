@@ -1,0 +1,13 @@
+{
+  "description": "Rich FAQ page expected to score high on Answer Readiness.",
+  "requestUrl": "https://example.com/help/geo",
+  "geoScore": 86,
+  "pillars": [
+    { "name": "Answer Readiness", "score": 24, "max": 25 },
+    { "name": "Schema & Structured Data", "score": 18, "max": 20 },
+    { "name": "Rendering & Indexability", "score": 18, "max": 20 },
+    { "name": "Evidence Packaging", "score": 12, "max": 15 },
+    { "name": "Entity Clarity", "score": 8, "max": 10 }
+  ],
+  "topFixes": ["dataset_missing", "sameas_missing", "entity_schema_missing"]
+}

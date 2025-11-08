@@ -1,0 +1,13 @@
+{
+  "description": "Data article with tables but missing Dataset schema.",
+  "requestUrl": "https://example.com/data/geo-metrics",
+  "geoScore": 73,
+  "pillars": [
+    { "name": "Answer Readiness", "score": 19, "max": 25 },
+    { "name": "Schema & Structured Data", "score": 12, "max": 20 },
+    { "name": "Rendering & Indexability", "score": 17, "max": 20 },
+    { "name": "Evidence Packaging", "score": 13, "max": 15 },
+    { "name": "Entity Clarity", "score": 6, "max": 10 }
+  ],
+  "topFixes": ["table_missing", "schema_properties_sparse", "sameas_missing"]
+}

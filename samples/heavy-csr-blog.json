@@ -1,0 +1,17 @@
+{
+  "description": "Heavy CSR blog (content loads via JS only). Should trigger text_ratio red flag.",
+  "requestUrl": "https://example.com/js-blog",
+  "geoScore": 42,
+  "pillars": [
+    { "name": "Answer Readiness", "score": 12, "max": 25 },
+    { "name": "Schema & Structured Data", "score": 6, "max": 20 },
+    { "name": "Rendering & Indexability", "score": 4, "max": 20 },
+    { "name": "Evidence Packaging", "score": 8, "max": 15 },
+    { "name": "Entity Clarity", "score": 4, "max": 10 }
+  ],
+  "notes": [
+    "text_ratio_noJS=0.18 (red flag)",
+    "Only hero heading rendered server-side."
+  ],
+  "topFixes": ["text_ratio_low", "faq_missing", "jsonld_missing"]
+}
